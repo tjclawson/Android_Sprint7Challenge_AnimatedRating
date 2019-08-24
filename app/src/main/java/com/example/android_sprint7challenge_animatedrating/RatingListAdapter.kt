@@ -26,6 +26,7 @@ class RatingListAdapter(val ratingList: MutableList<Rating>): RecyclerView.Adapt
         val rating = ratingList[position]
         holder.bindModel(rating)
 
+
     }
 
     class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
