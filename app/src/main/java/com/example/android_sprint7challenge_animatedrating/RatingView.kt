@@ -24,7 +24,63 @@ class RatingView(context: Context, attrs: AttributeSet?): LinearLayout(context, 
     //fun animateViews()
 
    init {
-       val imageLayoutParams = LinearLayout.LayoutParams(0, LayoutParams.WRAP_CONTENT, 1f)
+
+       saveButton.text = "Save"
+       enterText.hint = "Enter Text Here"
+
+       addView(saveButton)
+       addView(enterText)
+
+       val typedArray = context.obtainStyledAttributes(attrs, R.styleable.RatingView)
+       val starCount = typedArray.getInt(R.styleable.RatingView_starcount, 3)
+       val starStart = typedArray.getInt(R.styleable.RatingView_starstart, 1)
+       typedArray.recycle()
+
+       for (i in 0 until starCount) {
+
+           val newImage = ImageView(context)
+           var vector = ContextCompat.getDrawable(context, R.drawable.pausetoplay)
+           newImage.setImageDrawable(vector)
+           newImage.tag = i + 1
+           addView(newImage)
+
+
+           newImage.setOnClickListener {
+
+               rating = i + 1
+               if (counter == 0) {
+
+                   counter++
+
+                   //for (i in 0 until rating) {
+
+                       var vector = ContextCompat.getDrawable(context, R.drawable.pausetoplay)
+                       newImage.setImageDrawable(vector)
+                       (vector as Animatable).start()
+                  // }
+
+
+
+               } else {
+                   counter--
+
+                   //for (i in 0 until rating) {
+                       var vector = ContextCompat.getDrawable(context, R.drawable.playtopause)
+                       newImage.setImageDrawable(vector)
+                       (vector as Animatable).start()
+                   //}
+
+
+               }
+           }
+
+       }
+
+
+
+
+
+       /*val imageLayoutParams = LinearLayout.LayoutParams(0, LayoutParams.WRAP_CONTENT, 1f)
        //val firstImageView = ImageView(context)
        firstImageView.layoutParams = imageLayoutParams
        firstImageView.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.pausetoplay))
@@ -105,8 +161,7 @@ class RatingView(context: Context, attrs: AttributeSet?): LinearLayout(context, 
        addView(firstImageView)
        addView(secondImageView)
        addView(thirdImageView)
-       addView(saveButton)
-
+       addView(saveButton)*/
    }
 
 }
