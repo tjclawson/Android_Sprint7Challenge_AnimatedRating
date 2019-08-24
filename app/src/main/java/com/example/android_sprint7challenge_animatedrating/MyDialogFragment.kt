@@ -31,8 +31,8 @@ class MyDialogFragment: DialogFragment() {
             inputname = rating_view.enterText.text.toString()
             inputrating = rating_view.rating.toString()
 
-            ratingNames.add(inputname)
-            ratingValues.add(inputrating)
+            ratingNames[0] = inputname
+            ratingValues[0] = inputrating
 
             for (i in 0 until ratingList.size) {
                 println(ratingList[i])

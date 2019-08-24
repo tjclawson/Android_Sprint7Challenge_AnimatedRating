@@ -17,9 +17,9 @@ class RatingView(context: Context, attrs: AttributeSet?): LinearLayout(context, 
     var rating = 0
     val saveButton = Button(context)
     val enterText = EditText(context)
-    val thirdImageView = ImageView(context)
-    val secondImageView = ImageView(context)
-    val firstImageView = ImageView(context)
+    //val thirdImageView = ImageView(context)
+    //val secondImageView = ImageView(context)
+    //val firstImageView = ImageView(context)
 
     //fun animateViews()
 

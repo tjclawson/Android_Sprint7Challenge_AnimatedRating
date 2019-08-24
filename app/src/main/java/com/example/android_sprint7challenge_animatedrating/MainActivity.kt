@@ -26,11 +26,14 @@ class MainActivity : AppCompatActivity() {
 
             RatingRepo.createRatingList()
 
+
+
             rating_list_view.setHasFixedSize(false)
             val manager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
             val adapter = RatingListAdapter(RatingRepo.ratingList)
             rating_list_view.layoutManager = manager
             rating_list_view.adapter = adapter
+
 
 
 
