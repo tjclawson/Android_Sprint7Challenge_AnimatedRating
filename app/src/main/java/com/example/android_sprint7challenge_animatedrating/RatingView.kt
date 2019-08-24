@@ -43,6 +43,7 @@ class RatingView(context: Context, attrs: AttributeSet?): LinearLayout(context, 
            newImage.setImageDrawable(vector)
            newImage.tag = i + 1
            addView(newImage)
+           rating = starStart
 
 
            newImage.setOnClickListener {
