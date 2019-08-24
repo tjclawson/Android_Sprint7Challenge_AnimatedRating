@@ -10,7 +10,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Hello World!"
-            app:starcount="10"
+            app:starcount="5"
             app:starstart="1"
             android:onClick="onClick"/>
             <!--app:layout_constraintBottom_toBottomOf="parent"

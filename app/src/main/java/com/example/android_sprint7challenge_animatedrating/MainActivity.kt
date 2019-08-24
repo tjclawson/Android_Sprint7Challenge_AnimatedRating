@@ -24,9 +24,16 @@ class MainActivity : AppCompatActivity() {
 
             dialog.show(supportFragmentManager, "MyDialogFragment")
 
+
+
+
+
+
+        }
+
+        button_refresh.setOnClickListener {
+
             RatingRepo.createRatingList()
-
-
 
             rating_list_view.setHasFixedSize(false)
             val manager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
@@ -34,8 +41,7 @@ class MainActivity : AppCompatActivity() {
             rating_list_view.layoutManager = manager
             rating_list_view.adapter = adapter
 
-
-
+            button_refresh.text = "Refresh List"
 
         }
 
