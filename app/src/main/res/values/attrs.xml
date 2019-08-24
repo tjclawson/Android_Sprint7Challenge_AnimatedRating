@@ -3,6 +3,7 @@
     <declare-styleable name="RatingView">
         <attr name="starcount" format="integer"/>
         <attr name="starstart" format="integer"/>
+        <attr name="isfilled" format="boolean"/>
 
     </declare-styleable>
 </resources>

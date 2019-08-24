@@ -34,13 +34,15 @@ class RatingView(context: Context, attrs: AttributeSet?): LinearLayout(context, 
        val typedArray = context.obtainStyledAttributes(attrs, R.styleable.RatingView)
        val starCount = typedArray.getInt(R.styleable.RatingView_starcount, 3)
        val starStart = typedArray.getInt(R.styleable.RatingView_starstart, 1)
+       val isFilled = typedArray.getBoolean(R.styleable.RatingView_isfilled, false)
        typedArray.recycle()
 
        for (i in 0 until starCount) {
 
            val newImage = ImageView(context)
-           var vector = ContextCompat.getDrawable(context, R.drawable.pausetoplay)
+           var vector = ContextCompat.getDrawable(context, R.drawable.one)
            newImage.setImageDrawable(vector)
+           (vector as Animatable).start()
            newImage.tag = i + 1
            addView(newImage)
            rating = starStart
@@ -53,28 +55,24 @@ class RatingView(context: Context, attrs: AttributeSet?): LinearLayout(context, 
 
                    counter++
 
-                   //for (i in 0 until rating) {
-
-                       var vector = ContextCompat.getDrawable(context, R.drawable.pausetoplay)
+                       var vector = ContextCompat.getDrawable(context, R.drawable.two)
                        newImage.setImageDrawable(vector)
                        (vector as Animatable).start()
-                  // }
 
-
+                        for (i in 0 until rating){
+                            newImage.tag
+                            (vector).start()
+                        }
 
                } else {
+
                    counter--
 
-                   //for (i in 0 until rating) {
-                       var vector = ContextCompat.getDrawable(context, R.drawable.playtopause)
+                       var vector = ContextCompat.getDrawable(context, R.drawable.one)
                        newImage.setImageDrawable(vector)
                        (vector as Animatable).start()
-                   //}
-
-
                }
            }
-
        }
 
 
